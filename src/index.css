@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+/*
+  ROOT STYLES
+*/
+
+:root {
+  --clr-dark-cyan: hsl(185, 75%, 39%);
+  --clr-very-dark-blue: hsl(229, 23%, 23%);
+  --clr-dark-grayish-blue: hsl(227, 10%, 46%);
+  --clr-dark-gray: hsl(0, 0%, 59%);
+
+  --ff-main: 'Kumbh Sans', sans-serif;
+  --fs-main: 1.125rem;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/*
+  GLOBAL CSS RESET
+*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  9. Table styles
+*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*
+  PROJECT CSS
+*/
+
+body {
+  background: url(./assets/images/bg-pattern-top.svg) top -500px left -700px
+      no-repeat,
+    url(./assets/images/bg-pattern-bottom.svg) bottom -500px right -700px
+      no-repeat;
+  background-color: var(--clr-dark-cyan);
+  font-family: var(--ff-main);
+  font-size: var(--fs-main);
+  font-weight: var(--fw-400);
+  color: var(--clr-dark-gray);
+}
+
+@media (width >48em) {
+  body {
+    background: url(./assets/images/bg-pattern-top.svg) top -600px left -200px
+        no-repeat,
+      url(./assets/images/bg-pattern-bottom.svg) bottom -600px right -200px
+        no-repeat;
+    background-color: var(--clr-dark-cyan);
+  }
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+/* PROFILE CARD */
+
+.profile-card {
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.profile-card__header {
+  background: center / cover no-repeat url(./assets/images/bg-pattern-card.svg);
+  height: 200px;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.profile-card__avater {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-card__avater img {
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.profile-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.profile-card__person {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.profile-card__name {
+  color: var(--clr-very-dark-blue);
+}
+
+.profile-card__age {
+  font-size: 1.5rem;
+}
+
+.profile-card__footer {
+  padding: 1.5rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-card__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-card__socials-number {
+  color: var(--clr-very-dark-blue);
+  font-weight: var(--fw-700);
+}
+
+.profile-card__socials-text {
+  font-size: 0.875rem;
+}
